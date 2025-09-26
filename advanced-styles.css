@@ -1,0 +1,627 @@
+/* Advanced Game Styles */
+.game-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.game-area {
+    display: none;
+    padding: 2rem;
+    background: var(--white);
+    border-radius: var(--border-radius-xl);
+    box-shadow: var(--shadow-lg);
+    margin: 2rem 0;
+}
+
+.game-area.active {
+    display: block;
+    animation: slideIn 0.5s ease;
+}
+
+.game-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: var(--gray-50);
+    border-radius: var(--border-radius);
+}
+
+.game-stats .stat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: var(--gray-700);
+}
+
+/* Memory Match Game */
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.memory-card {
+    aspect-ratio: 1;
+    background: var(--primary);
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.memory-card.flipped {
+    transform: rotateY(180deg);
+}
+
+.memory-card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-radius);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.memory-card-front {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.memory-card-back {
+    background: var(--white);
+    color: var(--gray-800);
+    transform: rotateY(180deg);
+    border: 2px solid var(--gray-300);
+}
+
+/* Speed Typing Game */
+.typing-challenge {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.challenge-char {
+    font-size: 8rem;
+    font-family: var(--font-japanese);
+    font-weight: 700;
+    color: var(--primary);
+    margin: 2rem 0;
+    text-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.typing-input input {
+    width: 100%;
+    max-width: 400px;
+    padding: 1.5rem;
+    font-size: 2rem;
+    text-align: center;
+    border: 3px solid var(--gray-300);
+    border-radius: var(--border-radius-lg);
+    transition: var(--transition);
+}
+
+.typing-input input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(230, 0, 51, 0.1);
+}
+
+.typing-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.typing-stats .stat-card {
+    text-align: center;
+    padding: 1rem;
+    background: var(--gray-50);
+    border-radius: var(--border-radius);
+    min-width: 120px;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+    display: block;
+}
+
+/* Falling Characters Game */
+.falling-game-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#falling-canvas {
+    border: 2px solid var(--gray-300);
+    border-radius: var(--border-radius);
+    background: linear-gradient(180deg, #87CEEB 0%, #98FB98 100%);
+}
+
+.falling-ui {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.falling-input input {
+    padding: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+    border: 2px solid var(--white);
+    border-radius: var(--border-radius);
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+}
+
+.falling-stats {
+    display: flex;
+    gap: 2rem;
+    color: var(--white);
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Word Builder Game */
+.word-builder-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.target-word {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background: var(--gray-50);
+    border-radius: var(--border-radius-lg);
+}
+
+.target-word h3 {
+    font-size: 2rem;
+    color: var(--gray-800);
+    margin-bottom: 0.5rem;
+}
+
+.word-meaning {
+    font-size: 1.2rem;
+    color: var(--gray-600);
+    font-style: italic;
+}
+
+.char-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.char-tile {
+    aspect-ratio: 1;
+    background: var(--white);
+    border: 2px solid var(--gray-300);
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-family: var(--font-japanese);
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.char-tile:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.char-tile.selected {
+    background: var(--primary);
+    color: var(--white);
+    border-color: var(--primary-dark);
+}
+
+.constructed-area {
+    min-height: 100px;
+    border: 2px dashed var(--gray-300);
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-family: var(--font-japanese);
+}
+
+/* Progress Tracking Styles */
+.progress-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.progress-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.overview-card {
+    background: var(--white);
+    border-radius: var(--border-radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: var(--transition);
+}
+
+.overview-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.card-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--white);
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+}
+
+.card-content h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--gray-800);
+    margin-bottom: 0.5rem;
+}
+
+.card-content p {
+    color: var(--gray-600);
+    margin-bottom: 1rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: var(--gray-200);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.time-breakdown, .accuracy-trend {
+    font-size: 0.9rem;
+    color: var(--gray-600);
+}
+
+.trend-up {
+    color: var(--success);
+    font-weight: 600;
+}
+
+.streak-calendar {
+    display: flex;
+    gap: 0.25rem;
+    margin-top: 0.5rem;
+}
+
+.streak-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--gray-300);
+}
+
+.streak-dot.active {
+    background: var(--primary);
+}
+
+/* Charts */
+.progress-charts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.chart-container {
+    background: var(--white);
+    border-radius: var(--border-radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+}
+
+.chart-container h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--gray-800);
+}
+
+/* Achievements */
+.achievements-section {
+    margin-bottom: 3rem;
+}
+
+.achievements-section h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.5rem;
+    color: var(--gray-800);
+    margin-bottom: 2rem;
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.achievement-card {
+    background: var(--white);
+    border-radius: var(--border-radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.achievement-card.unlocked {
+    border-color: var(--success);
+    background: linear-gradient(135deg, #f0fff4, #e6fffa);
+}
+
+.achievement-card.locked {
+    opacity: 0.6;
+    border-color: var(--gray-300);
+}
+
+.achievement-icon {
+    font-size: 3rem;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--gray-100);
+}
+
+.achievement-card.unlocked .achievement-icon {
+    background: linear-gradient(135deg, var(--success), #27ae60);
+}
+
+.achievement-info h4 {
+    font-size: 1.2rem;
+    color: var(--gray-800);
+    margin-bottom: 0.5rem;
+}
+
+.achievement-info p {
+    color: var(--gray-600);
+    margin-bottom: 0.5rem;
+}
+
+.achievement-progress {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+/* Goals Section */
+.goals-section h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.5rem;
+    color: var(--gray-800);
+    margin-bottom: 2rem;
+}
+
+.goals-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.goal-card {
+    background: var(--white);
+    border-radius: var(--border-radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+}
+
+.goal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.goal-header h4 {
+    color: var(--gray-800);
+    font-size: 1.2rem;
+}
+
+.edit-goal-btn {
+    background: none;
+    border: none;
+    color: var(--gray-500);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.edit-goal-btn:hover {
+    background: var(--gray-100);
+    color: var(--primary);
+}
+
+.goal-progress {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.goal-circle {
+    position: relative;
+    width: 120px;
+    height: 120px;
+}
+
+.goal-circle svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.circle-bg {
+    fill: none;
+    stroke: var(--gray-200);
+    stroke-width: 3;
+}
+
+.circle {
+    fill: none;
+    stroke: var(--primary);
+    stroke-width: 3;
+    stroke-linecap: round;
+    transition: stroke-dasharray 0.3s ease;
+}
+
+.goal-percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.goal-details p {
+    color: var(--gray-600);
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive Design for Advanced Features */
+@media (max-width: 768px) {
+    .memory-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .challenge-char {
+        font-size: 5rem;
+    }
+    
+    .typing-stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    #falling-canvas {
+        width: 100%;
+        height: 400px;
+    }
+    
+    .falling-stats {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .progress-overview {
+        grid-template-columns: 1fr;
+    }
+    
+    .overview-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .progress-charts {
+        grid-template-columns: 1fr;
+    }
+    
+    .achievements-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .goals-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .goal-progress {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --white: #1a1a1a;
+        --gray-50: #2d2d2d;
+        --gray-100: #3d3d3d;
+        --gray-200: #4d4d4d;
+        --gray-300: #5d5d5d;
+        --gray-600: #9d9d9d;
+        --gray-700: #bd bd bd;
+        --gray-800: #dddddd;
+        --gray-900: #ffffff;
+    }
+    
+    .memory-card-back {
+        background: var(--gray-100);
+        color: var(--gray-800);
+        border-color: var(--gray-600);
+    }
+    
+    #falling-canvas {
+        background: linear-gradient(180deg, #2c3e50 0%, #34495e 100%);
+    }
+}
