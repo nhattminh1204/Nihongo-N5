@@ -312,9 +312,9 @@ section.active {
 
 .table-cell {
     flex: 1;
-    padding: 1rem;
+    padding: 0.8rem;
     text-align: center;
-    min-width: 100px;
+    min-width: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -330,10 +330,12 @@ section.active {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0.75rem;
+    padding: 0.8rem;
     border-radius: var(--border-radius);
     transition: var(--transition);
     cursor: pointer;
+    min-width: 60px;
+    min-height: 80px;
 }
 
 .char-display:hover {
@@ -1895,16 +1897,16 @@ footer {
 }
 /* Combination characters styling */
 .combination-chars .japanese-char {
-    font-size: 1.5rem !important;
+    font-size: 2rem !important;
     line-height: 1.2;
 }
 
 .combination-chars .table-cell {
-    padding: 0.75rem 0.5rem;
+    padding: 1.2rem;
 }
 
 .combination-chars .char-display {
-    padding: 0.5rem;
+    padding: 1.2rem;
 }
 /* Wide basic table */
 .basic-table-wide {

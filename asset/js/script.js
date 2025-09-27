@@ -99,6 +99,138 @@ document.addEventListener('DOMContentLoaded', function() {
         { char: 'ン', romanji: 'n', group: 'n-special', row: 0 }
     ];
 
+    // Dakuten (âm đục) - Hiragana
+    const hiraganaDakuten = [
+        { char: 'が', romanji: 'ga', group: 'g-line', row: 0 },
+        { char: 'ぎ', romanji: 'gi', group: 'g-line', row: 1 },
+        { char: 'ぐ', romanji: 'gu', group: 'g-line', row: 2 },
+        { char: 'げ', romanji: 'ge', group: 'g-line', row: 3 },
+        { char: 'ご', romanji: 'go', group: 'g-line', row: 4 },
+        { char: 'ざ', romanji: 'za', group: 'z-line', row: 0 },
+        { char: 'じ', romanji: 'ji', group: 'z-line', row: 1 },
+        { char: 'ず', romanji: 'zu', group: 'z-line', row: 2 },
+        { char: 'ぜ', romanji: 'ze', group: 'z-line', row: 3 },
+        { char: 'ぞ', romanji: 'zo', group: 'z-line', row: 4 },
+        { char: 'だ', romanji: 'da', group: 'd-line', row: 0 },
+        { char: 'ぢ', romanji: 'ji', group: 'd-line', row: 1 },
+        { char: 'づ', romanji: 'zu', group: 'd-line', row: 2 },
+        { char: 'で', romanji: 'de', group: 'd-line', row: 3 },
+        { char: 'ど', romanji: 'do', group: 'd-line', row: 4 },
+        { char: 'ば', romanji: 'ba', group: 'b-line', row: 0 },
+        { char: 'び', romanji: 'bi', group: 'b-line', row: 1 },
+        { char: 'ぶ', romanji: 'bu', group: 'b-line', row: 2 },
+        { char: 'べ', romanji: 'be', group: 'b-line', row: 3 },
+        { char: 'ぼ', romanji: 'bo', group: 'b-line', row: 4 },
+        { char: 'ぱ', romanji: 'pa', group: 'p-line', row: 0 },
+        { char: 'ぴ', romanji: 'pi', group: 'p-line', row: 1 },
+        { char: 'ぷ', romanji: 'pu', group: 'p-line', row: 2 },
+        { char: 'ぺ', romanji: 'pe', group: 'p-line', row: 3 },
+        { char: 'ぽ', romanji: 'po', group: 'p-line', row: 4 }
+    ];
+
+    // Dakuten (âm đục) - Katakana
+    const katakanaDakuten = [
+        { char: 'ガ', romanji: 'ga', group: 'g-line', row: 0 },
+        { char: 'ギ', romanji: 'gi', group: 'g-line', row: 1 },
+        { char: 'グ', romanji: 'gu', group: 'g-line', row: 2 },
+        { char: 'ゲ', romanji: 'ge', group: 'g-line', row: 3 },
+        { char: 'ゴ', romanji: 'go', group: 'g-line', row: 4 },
+        { char: 'ザ', romanji: 'za', group: 'z-line', row: 0 },
+        { char: 'ジ', romanji: 'ji', group: 'z-line', row: 1 },
+        { char: 'ズ', romanji: 'zu', group: 'z-line', row: 2 },
+        { char: 'ゼ', romanji: 'ze', group: 'z-line', row: 3 },
+        { char: 'ゾ', romanji: 'zo', group: 'z-line', row: 4 },
+        { char: 'ダ', romanji: 'da', group: 'd-line', row: 0 },
+        { char: 'ヂ', romanji: 'ji', group: 'd-line', row: 1 },
+        { char: 'ヅ', romanji: 'zu', group: 'd-line', row: 2 },
+        { char: 'デ', romanji: 'de', group: 'd-line', row: 3 },
+        { char: 'ド', romanji: 'do', group: 'd-line', row: 4 },
+        { char: 'バ', romanji: 'ba', group: 'b-line', row: 0 },
+        { char: 'ビ', romanji: 'bi', group: 'b-line', row: 1 },
+        { char: 'ブ', romanji: 'bu', group: 'b-line', row: 2 },
+        { char: 'ベ', romanji: 'be', group: 'b-line', row: 3 },
+        { char: 'ボ', romanji: 'bo', group: 'b-line', row: 4 },
+        { char: 'パ', romanji: 'pa', group: 'p-line', row: 0 },
+        { char: 'ピ', romanji: 'pi', group: 'p-line', row: 1 },
+        { char: 'プ', romanji: 'pu', group: 'p-line', row: 2 },
+        { char: 'ペ', romanji: 'pe', group: 'p-line', row: 3 },
+        { char: 'ポ', romanji: 'po', group: 'p-line', row: 4 }
+    ];
+
+    // Combination (âm ghép) - Hiragana
+    const hiraganaCombination = [
+        { char: 'きゃ', romanji: 'kya', group: 'ky-line', row: 0 },
+        { char: 'きゅ', romanji: 'kyu', group: 'ky-line', row: 1 },
+        { char: 'きょ', romanji: 'kyo', group: 'ky-line', row: 2 },
+        { char: 'しゃ', romanji: 'sha', group: 'sh-line', row: 0 },
+        { char: 'しゅ', romanji: 'shu', group: 'sh-line', row: 1 },
+        { char: 'しょ', romanji: 'sho', group: 'sh-line', row: 2 },
+        { char: 'ちゃ', romanji: 'cha', group: 'ch-line', row: 0 },
+        { char: 'ちゅ', romanji: 'chu', group: 'ch-line', row: 1 },
+        { char: 'ちょ', romanji: 'cho', group: 'ch-line', row: 2 },
+        { char: 'にゃ', romanji: 'nya', group: 'ny-line', row: 0 },
+        { char: 'にゅ', romanji: 'nyu', group: 'ny-line', row: 1 },
+        { char: 'にょ', romanji: 'nyo', group: 'ny-line', row: 2 },
+        { char: 'ひゃ', romanji: 'hya', group: 'hy-line', row: 0 },
+        { char: 'ひゅ', romanji: 'hyu', group: 'hy-line', row: 1 },
+        { char: 'ひょ', romanji: 'hyo', group: 'hy-line', row: 2 },
+        { char: 'みゃ', romanji: 'mya', group: 'my-line', row: 0 },
+        { char: 'みゅ', romanji: 'myu', group: 'my-line', row: 1 },
+        { char: 'みょ', romanji: 'myo', group: 'my-line', row: 2 },
+        { char: 'りゃ', romanji: 'rya', group: 'ry-line', row: 0 },
+        { char: 'りゅ', romanji: 'ryu', group: 'ry-line', row: 1 },
+        { char: 'りょ', romanji: 'ryo', group: 'ry-line', row: 2 },
+        { char: 'ぎゃ', romanji: 'gya', group: 'gy-line', row: 0 },
+        { char: 'ぎゅ', romanji: 'gyu', group: 'gy-line', row: 1 },
+        { char: 'ぎょ', romanji: 'gyo', group: 'gy-line', row: 2 },
+        { char: 'じゃ', romanji: 'ja', group: 'j-line', row: 0 },
+        { char: 'じゅ', romanji: 'ju', group: 'j-line', row: 1 },
+        { char: 'じょ', romanji: 'jo', group: 'j-line', row: 2 },
+        { char: 'びゃ', romanji: 'bya', group: 'by-line', row: 0 },
+        { char: 'びゅ', romanji: 'byu', group: 'by-line', row: 1 },
+        { char: 'びょ', romanji: 'byo', group: 'by-line', row: 2 },
+        { char: 'ぴゃ', romanji: 'pya', group: 'py-line', row: 0 },
+        { char: 'ぴゅ', romanji: 'pyu', group: 'py-line', row: 1 },
+        { char: 'ぴょ', romanji: 'pyo', group: 'py-line', row: 2 }
+    ];
+
+    // Combination (âm ghép) - Katakana
+    const katakanaCombination = [
+        { char: 'キャ', romanji: 'kya', group: 'ky-line', row: 0 },
+        { char: 'キュ', romanji: 'kyu', group: 'ky-line', row: 1 },
+        { char: 'キョ', romanji: 'kyo', group: 'ky-line', row: 2 },
+        { char: 'シャ', romanji: 'sha', group: 'sh-line', row: 0 },
+        { char: 'シュ', romanji: 'shu', group: 'sh-line', row: 1 },
+        { char: 'ショ', romanji: 'sho', group: 'sh-line', row: 2 },
+        { char: 'チャ', romanji: 'cha', group: 'ch-line', row: 0 },
+        { char: 'チュ', romanji: 'chu', group: 'ch-line', row: 1 },
+        { char: 'チョ', romanji: 'cho', group: 'ch-line', row: 2 },
+        { char: 'ニャ', romanji: 'nya', group: 'ny-line', row: 0 },
+        { char: 'ニュ', romanji: 'nyu', group: 'ny-line', row: 1 },
+        { char: 'ニョ', romanji: 'nyo', group: 'ny-line', row: 2 },
+        { char: 'ヒャ', romanji: 'hya', group: 'hy-line', row: 0 },
+        { char: 'ヒュ', romanji: 'hyu', group: 'hy-line', row: 1 },
+        { char: 'ヒョ', romanji: 'hyo', group: 'hy-line', row: 2 },
+        { char: 'ミャ', romanji: 'mya', group: 'my-line', row: 0 },
+        { char: 'ミュ', romanji: 'myu', group: 'my-line', row: 1 },
+        { char: 'ミョ', romanji: 'myo', group: 'my-line', row: 2 },
+        { char: 'リャ', romanji: 'rya', group: 'ry-line', row: 0 },
+        { char: 'リュ', romanji: 'ryu', group: 'ry-line', row: 1 },
+        { char: 'リョ', romanji: 'ryo', group: 'ry-line', row: 2 },
+        { char: 'ギャ', romanji: 'gya', group: 'gy-line', row: 0 },
+        { char: 'ギュ', romanji: 'gyu', group: 'gy-line', row: 1 },
+        { char: 'ギョ', romanji: 'gyo', group: 'gy-line', row: 2 },
+        { char: 'ジャ', romanji: 'ja', group: 'j-line', row: 0 },
+        { char: 'ジュ', romanji: 'ju', group: 'j-line', row: 1 },
+        { char: 'ジョ', romanji: 'jo', group: 'j-line', row: 2 },
+        { char: 'ビャ', romanji: 'bya', group: 'by-line', row: 0 },
+        { char: 'ビュ', romanji: 'byu', group: 'by-line', row: 1 },
+        { char: 'ビョ', romanji: 'byo', group: 'by-line', row: 2 },
+        { char: 'ピャ', romanji: 'pya', group: 'py-line', row: 0 },
+        { char: 'ピュ', romanji: 'pyu', group: 'py-line', row: 1 },
+        { char: 'ピョ', romanji: 'pyo', group: 'py-line', row: 2 }
+    ];
+
     // App State
     let currentAlphabet = hiragana;
     let currentMode = 'hiragana';
@@ -228,6 +360,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Alphabet Table Rendering
     function renderAlphabetTable() {
         renderBasicTable();
+        renderDakutenTable();
+        renderCombinationTable();
     }
 
     function renderBasicTable() {
@@ -273,7 +407,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (charData) {
                     cell.innerHTML = `
                         <div class="char-display" onclick="speakChar('${charData.romanji}')" style="cursor: pointer;">
-                            <div class="japanese-char" style="font-size: 24px; font-weight: bold; color: #2c3e50;">${charData.char}</div>
+                            <div class="japanese-char" style="font-size: 28px; font-weight: bold; color: #2c3e50;">${charData.char}</div>
                             <div class="romanji" style="font-size: 12px; color: #7f8c8d; margin-top: 4px;">${charData.romanji}</div>
                         </div>
                     `;
@@ -335,15 +469,78 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function getFilteredChars(alphabetType, charTypes) {
-        const selectedAlphabet = alphabetType === 'katakana' ? katakana : hiragana;
-        return selectedAlphabet.filter(char => {
-            if (charTypes.basic && (char.group === 'vowels' || char.group === 'k-line' || 
-                char.group === 's-line' || char.group === 't-line' || char.group === 'n-line' || 
-                char.group === 'h-line' || char.group === 'm-line' || char.group === 'y-line' || 
-                char.group === 'r-line' || char.group === 'w-line' || char.group === 'n-special')) {
-                return true;
+        let allChars = [];
+        
+        if (alphabetType === 'katakana') {
+            if (charTypes.basic) allChars = allChars.concat(katakana);
+            if (charTypes.dakuten) allChars = allChars.concat(katakanaDakuten);
+            if (charTypes.combination) allChars = allChars.concat(katakanaCombination);
+        } else {
+            if (charTypes.basic) allChars = allChars.concat(hiragana);
+            if (charTypes.dakuten) allChars = allChars.concat(hiraganaDakuten);
+            if (charTypes.combination) allChars = allChars.concat(hiraganaCombination);
+        }
+        
+        return allChars;
+    }
+
+    function renderDakutenTable() {
+        const dakutenTable = document.getElementById('dakuten-table');
+        if (!dakutenTable) return;
+
+        const dakutenData = currentMode === 'katakana' ? katakanaDakuten : hiraganaDakuten;
+        const dakutenGroups = ['g-line', 'z-line', 'd-line', 'b-line', 'p-line'];
+        const dakutenLabels = ['G', 'Z', 'D', 'B', 'P'];
+        
+        renderTableWithData(dakutenTable, dakutenGroups, dakutenLabels, dakutenData);
+    }
+
+    function renderCombinationTable() {
+        const combinationTable = document.getElementById('combination-table');
+        if (!combinationTable) return;
+
+        const combinationData = currentMode === 'katakana' ? katakanaCombination : hiraganaCombination;
+        const combinationGroups = ['ky-line', 'sh-line', 'ch-line', 'ny-line', 'hy-line', 'my-line', 'ry-line', 'gy-line', 'j-line', 'by-line', 'py-line'];
+        const combinationLabels = ['KY', 'SH', 'CH', 'NY', 'HY', 'MY', 'RY', 'GY', 'J', 'BY', 'PY'];
+        
+        renderTableWithData(combinationTable, combinationGroups, combinationLabels, combinationData);
+    }
+
+    function renderTableWithData(container, groups, labels, data) {
+        if (!container) return;
+        
+        container.innerHTML = '';
+        
+        groups.forEach((group, index) => {
+            const tableRow = document.createElement('div');
+            tableRow.className = 'table-row';
+
+            const labelCell = document.createElement('div');
+            labelCell.className = 'row-label';
+            labelCell.textContent = labels[index];
+            tableRow.appendChild(labelCell);
+
+            for (let i = 0; i < 3; i++) {
+                const charData = data.find(c => c.group === group && c.row === i);
+
+                const cell = document.createElement('div');
+                cell.className = 'table-cell';
+
+                if (charData) {
+                    cell.innerHTML = `
+                        <div class="char-display" onclick="speakChar('${charData.romanji}')" style="cursor: pointer;">
+                            <div class="japanese-char" style="font-size: 28px; font-weight: bold; color: #2c3e50;">${charData.char}</div>
+                            <div class="romanji" style="font-size: 11px; color: #7f8c8d; margin-top: 4px;">${charData.romanji}</div>
+                        </div>
+                    `;
+                } else {
+                    cell.innerHTML = '<div class="char-display empty-cell" style="opacity: 0.3;"></div>';
+                }
+
+                tableRow.appendChild(cell);
             }
-            return false;
+
+            container.appendChild(tableRow);
         });
     }
 
